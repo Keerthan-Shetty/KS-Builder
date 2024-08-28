@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Manager/management.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="./"><img src="{% static 'assets/logo2.png' %}" alt="logo"> </a>
+                <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent " aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../">Return To Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main d-flex justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="form ">
+                <form method="post">
+                    {% csrf_token %}
+                    <h3 class="text-center text-secondary">Manager Login</h3>
+                    <div class="form-section mt-5">
+                        <input class="rounded-3 border-0" type="text" name="manager_name" placeholder="USERNAME"
+                            required><br><br>
+                        <div class="password">
+                            <input class="rounded-3 border-0" type="password" name="manager_password" id="password"
+                                placeholder="PASSWORD" required>
+                            <span class="icon"><i class="fa-regular fa-eye-slash text-white" onclick="showPassword()"></i></span>
+                        </div><br>
+                        <div class="text-center">
+                            <a href="" class="text-center"><button class="button border-0 bg-primary text-white px-4 py-2 rounded-pill"
+                                    type="submit">Login</button></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

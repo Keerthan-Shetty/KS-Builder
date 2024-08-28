@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo1.png' %}">
+    <link rel="stylesheet" href="{% static 'Manager/managerlogin_approve.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="main d-flex justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="table-format">
+                <a href="/manager_profile/"><button class="exit rounded-circle px-3 py-1 bg-transparent text-danger fw-bold" type="button">X</button></a>
+                <h3 class="text-center">Login Approval</h3>
+                <br>
+                <div class="table-s">
+                <table class="table1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>E-mail</th>
+                        <th>Mobile No</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Login Status</th>
+                        <th>Action</th>
+                    </tr>
+                    {% for i in data %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.Name}}</td>
+                        <td>{{i.Email}}</td>
+                        <td>{{i.Mobile}}</td>
+                        <td>{{i.Username}}</td>
+                        <td>{{i.Password}}</td>
+                        <td>{{i.Login_Status}}</td>
+                        <td>
+                            <a href="/approve/{{i.id}}/"><button type="submit" class="button px-3 py-2 text-white border-0">Approve</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

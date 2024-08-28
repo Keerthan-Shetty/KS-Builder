@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Manager/management.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../"><img src="{% static 'assets/logo2.png' %}" alt="logo"> </a>
+                <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent " aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/manager_login/">Return To Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- main -->
+
+    <div class="main d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="box">
+                    <a href="/manager_login_approval/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/permission.png' %}" alt="login icon" width="100" height="100">
+                        <br><br>
+                        <h6 class="fw-bold" style="color: yellow;">Client Login Approval</h6>
+                    </div></a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/project_request/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/worksheet.png' %}" alt="contract" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-info fw-bold">Client Request Form</h6>
+                    </div></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/manager_quotation_page/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/quotation.png' %}" alt="quotation" width="100" height="100">
+                        <br><br>
+                        <h6 class="fw-bold" style="color: orange;">Project Quotation</h6>
+                    </div></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/project_update_page/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/updated.png' %}" alt="update" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-danger fw-bold">Project Update</h6>
+                    </div></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/project_approval_page/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/contract.png' %}" alt="contract" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-success fw-bold">Project Approved</h6>
+                    </div></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/project_profit/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/profit.png' %}" alt="contract" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-success fw-bold">Project Profit</h6>
+                    </div></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

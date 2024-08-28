@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.main{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("/static/assets/img3.jpg") !important;
+    height: 100vh;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.table-format{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    width:max-content;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #ffffff2f;
+    overflow:hidden;
+    position:relative;
+}
+.exit{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size:1.3rem;
+}
+.table-s{
+    width: 100%;
+    background-color:transparent;
+}
+.table-format table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 3px;
+    padding:20px;
+}
+th, td {
+    padding: 20px;
+    text-align: center !important;
+}
+th {
+    background-color: #0009;
+}
+td {
+    background-color: #1010107d;
+}
+.button{
+    background-color:green;
+}
+.button:hover{
+    background-color:#0080007a;
+}
+.button2{
+    background-color:red;
+}
+.button2:hover{
+    background-color:#ff00005c;
+}
+.table-s{
+        overflow-x:scroll !important;
+    }
+@media (max-width:1210px){
+    .table-s{
+        overflow-x:scroll !important;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Client/client_register.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="main d-flex justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="form">
+                <a href="/client_login/"><button class="exit fw-bold rounded-circle border-0 bg-transparent text-danger fs-3 ">X</button></a>
+                <form method="post">
+                    {% csrf_token %}
+                    <h3 class="text-center pt-4">Register</h3>
+                    <br>
+                    <div class="form-input">
+                        <div class="move">
+                            <input type="text" name="name" id="name" placeholder="YOUR NAME" required>
+                        </div>
+                        <div class="move">
+
+                            <input type="email" name="email" id="email" placeholder="YOUR EMAIL" required>
+                            <span id="emailquote" class="text-danger">Your email might be incorrect</span>
+                        </div>
+
+                        <div class="move">
+                            <input type="tel" name="tel" id="tel" placeholder="YOUR PHONE NUMBER" required>
+                            <span id="telquote" class="text-danger">Your Phone number should have atleast 10
+                                characters</span>
+                        </div>
+
+                        <div class="move">
+                            <input type="text" name="username" id="username" placeholder="YOUR USERNAME" required>
+                        </div>
+
+                        <div class="password move">
+                            <input type="password" name="password" id="password" placeholder="YOUR PASSWORD" required>
+                            <span id="passwordquote" class="text-danger">Password must be at least 8 characters long,
+                                include at least one uppercase letter, one lowercase letter, one number, and one special
+                                character</span>
+                            <span class="icon"><i class="fa-regular fa-eye-slash" onclick="showPassword()"></i></span>
+                            <p></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit"
+                            class=" px-3 py-2 border-0 text-light bg-primary rounded-3 ">Submit</button>
+                    </div>
+                </form>
+                <div id="popup" class="popup">
+                    <div class="message">
+                        <p> Your Form Is Submitted Successfully..</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

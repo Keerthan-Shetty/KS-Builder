@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Manager/managerlogin_approve.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="main d-flex flex-column justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="table-format ">
+                <a href="/manager_profile/"><button class="exit rounded-circle px-3 py-1 bg-transparent text-danger fw-bold" type="button">X</button></a>
+                <h3 class="text-center">Project Profit</h3>
+                <br>
+                <div class="table-s">
+                <table class="table1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Project Type</th>
+                        <th>Project Quotation</th>
+                        <th>Actual Quotation</th>
+                        <th>Profit</th>
+                        <th>Action</th>
+                    </tr>
+                    {% for i in value %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.Project_Type}}</td>
+                        <td>{{i.Manager_Quotation}}</td>
+                        <td>{{i.Actual_Quotation}}</td>
+                        <td>{{i.Profit}}</td>
+                        <td class="d-flex align-items-center">
+                            <a href="/project_calculate/{{i.id}}"><button type="submit" class="button px-3 py-2 m-2 text-white border-0 rounded-2">Profit Calculate</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+            {% if values %}
+            <div class="man-quote-details">
+                 <a href="/project_profit/"><button class="exit2 rounded-circle px-3 py-1 bg-transparent text-danger fw-bold" type="button">X</button></a>
+             <h4 class="text-center text-secondary">Quotation Details</h4>
+             <br>
+             <form method="post">
+                 {% csrf_token %}
+                 <div class="form-input d-flex justify-content-center align-items-center">
+                     <table>
+                         <tr>
+                             <td><label for="final_quote">Final Quotation</label></td>
+                             <td class="part"><input type="number" id="final_quote" name="final_quote" value="{{values.Manager_Quotation}}" readonly></td>
+                         </tr>
+                         <tr>
+                             <td><label for="actual_quote">Actual Quotation</label></td>
+                             <td class="part"><input type="number" id="actual_quote" name="actual_quote" required></td>
+                         </tr>
+                         <tr>
+                             <td><label for="profit-quotation">Profit(Rs.)</label></td>
+                             <td class="part"><div class="d-flex align-items-center">
+                                            <input type="number" id="profit-quotation" name="profit" required>
+                                            <button type="button"
+                                                class="button-1 bg-danger text-white py-1 px-2 border-0 rounded"
+                                                onclick="profit_calculation()">Calculate</button>
+                                </div>
+                             </td></tr>
+                     </table>
+
+                 </div>
+                 <div class="text-center">
+                        <button type="submit"
+                            class=" px-3 py-2 border-0 text-light bg-primary rounded-3 ">Submit</button>
+                    </div>
+             </form>
+         </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

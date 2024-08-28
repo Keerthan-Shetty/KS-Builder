@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Vendor/project_calculation.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="main d-flex flex-column justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="table-format ">
+                <a href="/vendor_profile/"><button
+                        class="exit rounded-circle px-3 py-1 bg-transparent text-danger fw-bold"
+                        type="button">X</button></a>
+                <h3 class="text-center">Project Details</h3>
+                <br>
+                <div class="table-s">
+                    <table class="table1">
+                        <tr>
+                            <th>Id</th>
+                            <th>Project Type</th>
+                            <th>Land Area(sqft)</th>
+                            <th>Land Type</th>
+                            <th>Floors</th>
+                            <th>Design Layout</th>
+                            <th>Action</th>
+                        </tr>
+                        {% for i in value %}
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td>{{i.Project_Type}}</td>
+                            <td>{{i.Land_Area_Sqft}}</td>
+                            <td>{{i.Land_Type}}</td>
+                            <td>{{i.Floors}}</td>
+                            <td class="pdf"><a href="{{ i.Design_layout.url }}" target="_blank">{{i.Design_layout}}</a></td>
+                            <td>
+                                <a href="/calculate_page/{{i.id}}/"><button type="submit" class="bg-danger button px-3 py-2 text-white border-0 rounded">Project Calculation</button></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            {% if data %}
+            <div class="calculation d-flex justify-content-center align-items-center">
+                <div id="calculation">
+                    <form method="post">
+                        {% csrf_token %}
+                        <h3 class="text-center text-secondary">Project Calculation</h3>
+                        <br>
+                        <div class="form-input">
+                            <table>
+                                <tr>
+                                    <td><label for="name">Your Name</label></td>
+                                    <td><input type="text" id="name" name="name" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="company">Organization</label></td>
+                                    <td><input type="text" id="company" name="company" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="email">E-mail</label></td>
+                                    <td><input type="email" id="email" name="email" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="project_type">Project Type</label></td>
+                                    <td><input type="text" id="project_type" name="project_type" value="{{data.Project_Type}}" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="land-area">Land Area (SQFT)</label></td>
+                                    <td><input type="number" id="land-area" name="land-area" value="{{data.Land_Area_Sqft}}" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="floors">Floors</label></td>
+                                    <td><input type="number" id="floors" name="floors" value="{{data.Floors}}" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="cement">Cement Price [450bag for 1000sqft]</label></td>
+                                    <td><input type="number" id="cement" name="cement" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="sand">Sand Price [2000 perft / 1000sqft]</label></td>
+                                    <td><input type="number" id="sand" name="sand" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="stone">Stone Price [1900 perft / 1000sqft]</label></td>
+                                    <td><input type="number" id="stone" name="stone" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="brick">Brick Price [19000 count/ 1000sqft]</label></td>
+                                    <td><input type="number" id="brick" name="brick" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="steel">Steel Price [3500kg / 1000sqft]</label></td>
+                                    <td><input type="number" id="steel" name="steel" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="paint">Paint Price [6000 perft / 1000persqft]</label></td>
+                                    <td><input type="number" id="paint" name="paint" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="estimation">Total Estimation</label></td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <input type="number" id="estimation" name="total_estimation" required>
+                                            <button type="button"
+                                                class="button-1 bg-danger text-white py-1 px-2 border-0 rounded"
+                                                onclick="calculate()">Calculate</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            <div class="text-center">
+                                <a href=""><button class="border-0 bg-primary text-white px-4 py-2 rounded-pill"
+                                        type="submit">Submit</button></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

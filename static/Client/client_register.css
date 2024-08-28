@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.main{
+    background-color:#e49e4387;
+    height: 100vh;
+}
+.container{
+    position: relative;
+}
+.popup{
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    display: none;
+}
+.message{
+    background-color: rgba(0, 128, 0, 0.39);
+    color: #fff;
+}
+.message p{
+    padding: 10px;
+}
+#emailquote, #telquote, #passwordquote{
+    display: none;
+    font-size:0.8rem;
+}
+.form{
+    box-shadow:inset 0px 0px 13px #473e3ef7;
+    border-radius: 10px;
+    background-color: rgb(210, 188, 188);
+    padding: 20px;
+    width: 500px;
+    position: relative;
+}
+.exit{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+.form-input input{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.move{
+    margin-bottom: 20px;
+}
+.password{
+    position: relative;
+}
+.icon i{
+    position: absolute;
+    right: 5px;
+    top: 25%;
+}

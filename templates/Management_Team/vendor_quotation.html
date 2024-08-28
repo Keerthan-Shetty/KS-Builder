@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Manager/managerlogin_approve.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+ <div class="main1 d-flex flex-column justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="table-format ">
+                <a href="/team_profile/"><button class="exit rounded-circle px-3 py-1 bg-transparent text-danger fw-bold" type="button">X</button></a>
+                <h3 class="text-center">Vendor Quotation</h3>
+                <br>
+                <div class="table-s">
+                <table class="table1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Organization</th>
+                        <th>E-mail</th>
+                        <th>Project Type</th>
+                        <th>Land_Area_Sqft</th>
+                        <th>Floors</th>
+                        <th>Cement Price</th>
+                        <th>Sand Price</th>
+                        <th>Stone Price</th>
+                        <th>Brick Price</th>
+                        <th>Steel Price</th>
+                        <th>Paint Price</th>
+                        <th>Total Estimation(Rs.)</th>
+                    </tr>
+                    {% for i in data %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.Name}}</td>
+                        <td>{{i.Company}}</td>
+                        <td>{{i.Email}}</td>
+                        <td>{{i.Project_Type}}</td>
+                        <td>{{i.Land_Area_Sqft}}</td>
+                        <td>{{i.Floors}}</td>
+                        <td>{{i.Cement_Price}}</td>
+                        <td>{{i.Sand_Price}}</td>
+                        <td>{{i.Stone_Price}}</td>
+                        <td>{{i.Brick_Price}}</td>
+                        <td>{{i.Steel_Price}}</td>
+                        <td>{{i.Paint_Price}}</td>
+                        <td>{{i.Total_Estimation}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

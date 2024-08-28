@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Client/client_profile.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="main1  d-flex justify-content-center align-items-center">
+        <div class="container  d-flex justify-content-center align-items-center">
+            <div class="form ">
+                <form method="post">
+                    {% csrf_token %}
+                    <span class="exit"><a href="/client_profile/"><button type="button" class="rounded-circle bg-transparent text-danger fw-bold fs-4 px-3 py-1">X</button></a></span>
+                    <h3 class="text-secondary text-center">Project Register</h3>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" name="name" placeholder="YOUR NAME" required></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail</td>
+                            <td><input type="email" name="email" placeholder="YOUR EMAIL" required></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <td><input type="tel" name="mobile" placeholder="YOUR MOB NUMBER" required></td>
+                        </tr>
+                        <tr>
+                            <td>Project-Type</td>
+                            <td><select name="project_type">
+                                <option value="">Select </option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Residential Building">Residential Building</option>
+                                <option value="Industrial Building">Industrial Building</option>
+                                <option value="Office">Office</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Land-Area(sq.ft)</td>
+                            <td><input type="number" name="land_area" placeholder="Sqft" required></td>
+                        </tr>
+                        <tr>
+                            <td>Land-Type</td>
+                            <td><select name="land_type">
+                                <option value="">Select </option>
+                                <option value="Agricultural Land">Agricultural Land</option>
+                                <option value="Brownfield Land">Brownfield Land</option>
+                                <option value="Contaminated land">Contaminated land</option>
+                                <option value="Green Belt Land">Green Belt Land</option>
+                                <option value="Greenfield Land">Greenfield Land</option>
+                                <option value="Strategic Land">Strategic Land</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Floors</td>
+                            <td><input type="number" name="floors" placeholder="Floors" required></td>
+                        </tr>
+                    </table><br>
+                    <div class="text-center">
+                        <a href=""><button class="border-0 bg-primary text-white px-4 py-2 rounded-pill" type="submit">Submit</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

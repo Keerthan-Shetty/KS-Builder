@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo1.png' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="./"><img src="{% static 'assets/logo2.png' %}" alt="logo"> </a>
+                <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent " aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/client_login/">Client</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/manager_login/">Manager</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team_login/">Management Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/vendor_login/">Vendor</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- part1 -->
+
+    <div class="main">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="video">
+                        <video width="100%" autoplay muted loop>
+                            <source src="{% static 'assets/v4.mp4' %}" type="video/mp4">
+                            <source src="{% static 'assets/v4.ogg' %}" type="video/ogg">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="carousel-caption">
+                        <h1>Our Biggest Project</h1>
+                        <h5>"Good buildings come from good people, and all problems are solved by good design"</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="video">
+                        <video width="100%" autoplay muted loop>
+                            <source src="{% static 'assets/v3.mp4' %}" type="video/mp4">
+                            <source src="{% static 'assets/v3.ogg' %}" type="video/ogg">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="carousel-caption">
+                        <h1>Our Employees are passionate workers</h1>
+                        <h5>"We shape our buildings; thereafter, they shape us"</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" >
+                    <div class="video">
+                        <video width="100%" autoplay muted loop>
+                            <source src="{% static 'assets/v1.mp4' %}" type="video/mp4">
+                            <source src="{% static 'assets/v1.ogg' %}" type="video/ogg">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="carousel-caption">
+                        <h1>Our VIP's Guest House Project</h1>
+                        <h5>"Architecture is the learned game, correct and magnificent, of forms assembled in the light"
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- part2 -->
+
+    <div class="main2 pt-5 pb-5">
+        <div class="container">
+            <div class="content text-center">
+                <h2>Login</h2>
+                <p>Log in according to your profession here, or you can log in above by clicking on the navbar</p>
+            </div>
+            <div class="row pt-5">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="/client_login/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/client.png' %}" alt="client" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-primary fw-bold">Customer/Client</h6>
+                    </div></a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="/manager_login/"  class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/manager.png' %}" alt="manager" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-secondary fw-bold">Manager</h6>
+                    </div></a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="/team_login/"  class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/team.png' %}" alt="team" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-success fw-bold">Management Team</h6>
+                    </div></a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="/vendor_login/"  class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/supplier.png' %}" alt="supplier" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-danger fw-bold">Vendor</h6>
+                    </div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+    <footer>
+        <div class="footer pt-2">
+            <p class="text-center"><b><i class="fa-regular fa-copyright"></i> 2024 - Made with passion by KS-Builders</b></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

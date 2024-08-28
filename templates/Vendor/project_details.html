@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo1.png' %}">
+    <link rel="stylesheet" href="{% static 'Manager/managerlogin_approve.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="main5 d-flex flex-column justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="table-format ">
+                <a href="/vendor_profile/"><button class="exit rounded-circle px-3 py-1 bg-transparent text-danger fw-bold" type="button">X</button></a>
+                <h3 class="text-center">Project Details</h3>
+                <br>
+                <div class="table-s">
+                <table class="table1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Project Type</th>
+                        <th>Land Area(sqft)</th>
+                        <th>Land Type</th>
+                        <th>Floors</th>
+                        <th>Manager Approval</th>
+                        <th>Location Tested</th>
+                        <th>Design Layout</th>
+                    </tr>
+                    {% for i in value %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.Project_Type}}</td>
+                        <td>{{i.Land_Area_Sqft}}</td>
+                        <td>{{i.Land_Type}}</td>
+                        <td>{{i.Floors}}</td>
+                        <td>{{i.Manager_Approval}}</td>
+                        <td>{{i.Location_Tested}}</td>
+                        <td class="pdf"><a href="{{ i.Design_layout.url }}" target="_blank">{{ i.Design_layout }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

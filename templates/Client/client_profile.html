@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable= no">
+    <meta name="author" content="Keerthanshetty">
+    <title>KS-BUILDER</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'Client/client_profile.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../"><img src="{% static 'assets/logo2.png' %}" alt="logo"> </a>
+                <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent " aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/project_register/">Request Form</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/project_quotation_page/">Project Quotation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/client_project_update/">Project Update</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/project_approval_conform/">Project Approved</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- main -->
+
+    <div class="main d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="box">
+                    <a href="/project_register/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/contact-form.png' %}" alt="form" width="100" height="100">
+                        <br><br>
+                        <h6 class="fw-bold" style="color: yellow;">Project Request Form</h6>
+                    </div></a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/project_quotation_page/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/quotation.png' %}" alt="quotation" width="100" height="100">
+                        <br><br>
+                        <h6 class="fw-bold" style="color: orange;">Project Quotation</h6>
+                    </div></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/client_project_update/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/updated.png' %}" alt="update" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-danger fw-bold">Project Update</h6>
+                    </div></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                    <a href="/project_approval_conform/" class="tag"><div class="box mt-3 pt-4 pb-4 text-center">
+                        <img src="{% static 'assets/contract.png' %}" alt="contract" width="100" height="100">
+                        <br><br>
+                        <h6 class="text-success fw-bold">Project Approved</h6>
+                    </div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

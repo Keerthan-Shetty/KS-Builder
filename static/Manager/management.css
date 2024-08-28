@@ -83,7 +83,7 @@ button.navbar-toggler{
 
 /* manager */
 
-.main{
+.main, .main11{
     background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("/static/assets/img4.jpg") !important;
     height: 100vh;
     background-position: center !important;
@@ -164,7 +164,7 @@ button.navbar-toggler{
 
 
 /* Management team login */
-.main1{
+.main1, .main12{
     background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("/static/assets/img3.jpg") !important;
     height: 100vh;
     background-position: center !important;
